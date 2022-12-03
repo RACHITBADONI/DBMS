@@ -1,0 +1,28 @@
+
+basics..............
+create database employee;//for creating the database 
+create table employe(emp_id int,emp_name varchar(10),age int,salary int);//for creating the column with there datatype
+describe employe;//to print all the columns in the table employee
+select *from employe;//to print all the values of that table
+drop table employe;//to delete the table
+
+Q:-create a table employee and a department and make the d_id of department as primary and foreign in employee and further the employee is having emp_id as primary
+sol:-
+create table department(d_id int primary key,d_name varchar(10),location int);
+create table employe(emp_id int PRIMARY key,emp_name varchar(10),age int,d_id int foreign key,salary int);//not working
+
+create table employe(emp_id int PRIMARY key,emp_name varchar(10),age int,foreign key (d_id) references department(d_id),salary int);//not working
+.......doubt----> foreign key to be used but how?
+
+
+Q:-find the names of those employees whose salary is greater than 50K......
+
+select *from employe where salary>10000;//basic to see all info 
+select emp_name from employe where salary>10000;//req ans
+
+
+Q:- add a column of date of joinng in employee table and update the values....
+
+hint(alter table table_name add column_name datatype default expression(sys_date))
+alter table employe add doj varchar(10) default 'asd';//default value is assigned
+update table_name set column_name=value(in quotes as dd/mm/yy) where emp_id=12...
