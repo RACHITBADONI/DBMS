@@ -1,0 +1,53 @@
+/*
+//create the table
+create table student(sid int ,sname varchar(10),sec varchar(2),branch varchar(4),fee int,dob varchar(10));
+
+//insert into the table
+insert into student values(1,'name1','c','cse','120000','13-05-2002')
+insert into student values(2,'name2','d','cne','121200','13-12-2002')
+insert into student values(3,'name3','e','ed','120230','13-12-2020');
+insert into student values(4,'name4','f','edr','121200','13-12-2021');
+insert into student values(5,'name5','g','cdj','121200','13-12-2021');
+insert into student values(6,'name6','h','bca','121100','13-12-2022');
+insert into student values(7,'name7','i','bcom','190700','13-12-2012');
+insert into student values(8,'name8','j','bsc','127900','13-12-2012');
+insert into student values(9,'name9','k','ce','120780','13-12-2012');
+
+
+
+
+
+select *from student// to display all information 
+
+alter table student// to delete the particular column 
+drop column dob
+
+alter table student// to add the particular column 
+add dob varchar(2)
+
+update student set dob='01-03-2000'// for updating the value or to insert the value at a particular row and column
+where sid=2
+ // here the data was enter before and now it is updated which shows we can insert and modify the values
+update student set sname='RACHIT'
+where sid=1
+
+select max(fee) from student// to show the maximum fees
+
+alter table student // to modify the datatype of the column
+modify dob varchar(20)
+
+select branch,max(fee)//to group the similar items and then find the maximum value from that group
+from student  group by branch
+
+// now show the fees if less then 120780
+select max(fee) from student 
+where fee<120780 group by branch
+
+//what if we want to display the name of the depatrtmnet having maximum fees
+select branch, fee from student 
+where fee=(select max(fee) from student)
+
+// group by to be seen..........?
+basically it groups all the data according to the particular condition(like group by address used then all the entries having same address will be in same group and then we can apply all operation as we want)
+
+*/
