@@ -1,0 +1,43 @@
+
+//select id as per name
+select emp_id from emp where emp_name='shivam';
+
+//display the emp_id as id 
+select emp_id as id from emp;
+
+//to see kon kya rkh skta hai
+describe emp;
+
+// to add new column
+alter table emp add address varchar(20);
+
+// since recently we have added the column then how to add the information 
+   update emp set address='luxmipur' where emp_id=1;
+   update emp set address='luxmipur,barotiwala' where emp_id=2;
+
+//delete the row
+   delete  from emp where emp_id=1;
+
+//remove the column
+  alter table emp drop column address;
+
+//max in a column
+  select max(emp_id) from emp;
+
+//sum of all id's
+  select sum(emp_id) from emp;
+
+//avg of all id's
+  select avg(emp_id) from emp;
+
+//count column
+  select count(emp_id) from emp;
+
+//count column on a condition
+ select count(emp_id) from emp where emp_id=2;
+
+//desc order 
+ select * from emp order by emp_id desc;
+
+//group by 
+select emp_name from emp group by emp_name;
