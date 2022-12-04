@@ -1,0 +1,48 @@
+create table college(cName varchar(20),state varchar(20),enrollment int);
+insert into college values('geu','uttarakhand',1234);
+insert into college values('lpu','uttarpradesh',12340);
+insert into college values('vit','chennai',11);
+insert into college values('mit','bangalore',1001);
+insert into college values('goa_co','goa',1021);
+insert into college values('miity','goa',1101);
+
+
+create table student(sID int, sName varchar(10), GPA number(2,1), sizeHS int ,DoB date);
+insert into student values(1,'rachit',9.4,10,date '2003-08-10');
+insert into student values(2,'shivam',9.5,10,date '2004-10-20');
+insert into student values(3,'alpha1',9.2,12,date '2005-12-15');
+insert into student values(4,'bita2',9.6,14,date '2001-10-11');
+insert into student values(6,'asgjkl',3.5,10,date '2000-11-22');
+insert into student values(5,'asdjk',2.2,12,date '2002-12-15');
+insert into student values(7,'hello',9.2,1200,date '1997-12-15');
+insert into student values(8,'buffalo',8.2,12500,date '1993-12-15');
+insert into student values(9,'calloc',7.2,1235,date '1998-12-15');
+insert into student values(10,'malloc',5.2,1245,date '1995-12-15');
+
+
+create table apply(sID int ,cName varchar(10), major varchar(20),decision char(1));
+insert into apply values(1,'rachit','sde','y');
+insert into apply values(2,'shivam','ios','y');
+insert into apply values(3,'bita','ios','n');
+insert into apply values(4,'alpha','sde','n');
+
+a)select student name and dob from student table
+ans:-select sName,DoB from student;
+
+b)list the name of students scoring more then 3.7 gpa
+ans:-select sName from student where GPA>3.7;
+
+c)list the name of student whise high school size is atleast 1000 and born after 1996
+ans:-select sName from student where (DoB >'31-dec-1996 ' and sizeHS>1000);
+
+d)list the name of students who score GPA between 2.9 and 3.9
+ans:-select Sname from student where (GPA>=2.9 and GPA<=3.9);
+
+e)list the details of colleges who situated in goa
+ans:-select * from college where state='goa';
+
+f) List the students who have scored more than 2.0 but less than 3.5
+ans:-select sName from student where (GPA>2.0 and GPA<3.5);
+
+g)List the students who have born after 1st Jul 96 in the order of theDate of Birth
+ans:-
